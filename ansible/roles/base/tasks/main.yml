@@ -50,6 +50,7 @@
     pip:
       requirements: /opt/pi-watcher/requirements.txt
       virtualenv: /opt/pi-watcher/venv
+      virtualenv_site_packages: yes
 
 
   - name: Ensure Directory has correct permissions
