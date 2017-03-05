@@ -1,0 +1,10 @@
+server {
+    listen 80;
+    server_name pi-watcher.local;
+
+    location / {
+        include proxy_params;
+        proxy_pass unix:/opt/pi-watcher/src/gunicorn.sock;
+    }
+
+}

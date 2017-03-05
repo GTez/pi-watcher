@@ -1,0 +1,18 @@
+---
+- name: Copy gunicorn service
+  copy:
+    remote_src: yes
+    src: /opt/alpha-signup/server/config/nginx/sites-available/gunicorn
+    dest: /etc/nginx/sites-available/
+
+- name: link the gunicorn service
+  file:
+    remote_src: yes
+    src: /etc/nginx/sites-available/gunicorn
+    dest: /etc/nginx/sites-enabled/gunicorn
+    state: link
+
+- name: delete default service
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent

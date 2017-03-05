@@ -1,0 +1,15 @@
+[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/opt/pi-watcher/src/
+Environment="PATH=/opt/pi-watcher/venv/bin"
+ExecStart=/opt.pi-watcher/venv/bin/gunicorn -w 3 -b unix:/opt/pi-watcher/src/gunicorn.sock main:app
+
+
+[Install]
+WantedBy=multi-user.target
