@@ -1,0 +1,6 @@
+flask
+livestreamer
+omxplayer-wrapper
+youtube-dl
+
+# sudo apt-get install python-dbus

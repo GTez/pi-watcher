@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<meta http-equiv="refresh" content="10;url=/status" />
+    <title>Hotel Pi Player</title>
+</head>
+<body>
+<h2>Status: {{ message }}</h2>
+
+<p><u>Use the following URLs:<br></u>
+    <a href="/stop">/stop</a><br>
+    <a href="/pause">/pause</a><br>
+    <a href="/unpause">/unpause</a><br>
+    <a href="/status">/status</a></p>
+
+<h3>Please note - videos need to be stopped before new videos can play</h3>
+
+<p><u>To Play a Twitch Video:</u><br>
+    Go to <a href="https://www.twitch.tv/directory">Twitch's Directory</a> and find a user you want to watch.<br>
+    Then go to <a href="/twitch/play/BobRoss">/twitch/play/BobRoss</a> but replace BobRoss with twitch username<br>
+</p>
+
+<p><u>To watch a Youtube Video:</u></br>
+    Go to <a href="https://www.youtube.com/">Youtube.com</a> and find a video you'd like to watch.<br>
+    Copy the portion of the video after the ?v= part  e.g. https://www.youtube.com/watch?v=<b>M6FjLGqB-uc</b><br>
+    Then head to <a href="/youtube/play/M6FjLGqB-uc">/youtube/play/M6FjLGqB-uc</a> replacing M6FjLGqB-uc with your video<br>
+
+
+</p>
+</body>
+</html>
