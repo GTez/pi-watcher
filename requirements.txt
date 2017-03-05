@@ -3,6 +3,5 @@ livestreamer
 omxplayer-wrapper
 youtube-dl
 gunicorn
-python-dbus
 
 # sudo apt-get install python-dbus
