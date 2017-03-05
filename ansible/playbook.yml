@@ -5,5 +5,8 @@
     - base
     - { role: geerlingguy.nginx }
 
+  name: reboot
+    - shell: reboot
 
-
+  name: waiting for server to return
+    - local_action: wait_for host={{ ansible_ssh_host }} state=started

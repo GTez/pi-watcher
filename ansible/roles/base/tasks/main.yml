@@ -41,35 +41,33 @@
       state: latest 
       update_cache: false
 
+  - name: Pull from Github
+    git:
+          repo: https://github.com/GTez/pi-watcher.git
+          dest: /opt/pi-watcher
 
-- name: Pull from Github
-  git:
-        repo: https://github.com/GTez/pi-watcher.git
-        dest: /opt/pi-watcher
-        accept_hostkey: yes
-
-- name: Get Python Modules
-  pip:
-    requirements: /opt/requirements.txt
-    virtualenv: /opt/pi-watcher/venv
+  - name: Get Python Modules
+    pip:
+      requirements: /opt/pi-watcher/requirements.txt
+      virtualenv: /opt/pi-watcher/venv
 
 
-- name: Ensure Directory has correct permissions
-  file:
-    path: /opt/pi-watcher
-    state: directory
-    mode: "a+w"
-    recurse: yes
-    owner: root
+  - name: Ensure Directory has correct permissions
+    file:
+      path: /opt/pi-watcher
+      state: directory
+      mode: "a+w"
+      recurse: yes
+      owner: root
 
-- name: Copy systemd service
-  copy:
-    remote_src: yes
-    src: /opt/pi-watcher/config/systemd/system/gunicorn.service
-    dest: /etc/systemd/system/
+  - name: Copy systemd service
+    copy:
+      remote_src: yes
+      src: /opt/pi-watcher/config/systemd/system/gunicorn.service
+      dest: /etc/systemd/system/
 
-- name: Enable systemd
-  systemd:
-    name: gunicorn.service
-    enabled: yes
-    state: started
+  - name: Enable systemd
+    systemd:
+      name: gunicorn.service
+      enabled: yes
+      state: started
